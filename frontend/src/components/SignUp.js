@@ -6,12 +6,12 @@ function SignUp(props) {
   const [credentials, setCredentials] = useState({name : "", email: "", password: "", cpassword : "" })
   const navigate = useNavigate();
 
-  const loader = false;
+  const [loader, setLoader] = useState(false);
 
   const handleSubmit = async (e) => {
 
       e.preventDefault();
-      loader = true;
+      setLoader(true)
       const {name, email, password} = credentials
 
      
@@ -27,7 +27,7 @@ function SignUp(props) {
 
       const json = await respone.json();
 
-      loader = false;
+      setLoader(false);
      
 
       if (json.success) {
