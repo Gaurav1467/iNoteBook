@@ -4,11 +4,14 @@ import { useNavigate } from 'react-router-dom';
 function SignUp(props) {
 
   const [credentials, setCredentials] = useState({name : "", email: "", password: "", cpassword : "" })
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  const loader = false;
 
   const handleSubmit = async (e) => {
 
       e.preventDefault();
+      loader = true;
       const {name, email, password} = credentials
 
      
@@ -23,6 +26,8 @@ function SignUp(props) {
       });
 
       const json = await respone.json();
+
+      loader = false;
      
 
       if (json.success) {
@@ -43,7 +48,7 @@ function SignUp(props) {
   }
   return (
     <div className='container centre-d'>
-      <form onSubmit={handleSubmit}>
+      { loader ? <span class="loader"></span> : <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="text" className="form-label">Full Name</label>
           <input type="text" className="form-control input-style" onChange={onChange} minLength={3} required id="name" name='name' />
@@ -58,7 +63,7 @@ function SignUp(props) {
           <input type="password" className="form-control input-style" onChange={onChange} minLength={8} required name='password' id="password" />
         </div>
         <button disabled = {credentials.name.length < 3 || credentials.password.length < 8  } type="submit" className="btn btn-primary">Sign Up</button>
-      </form>
+      </form>}
     </div>
   )
 }
