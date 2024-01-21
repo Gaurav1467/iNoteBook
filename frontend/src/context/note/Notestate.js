@@ -12,7 +12,7 @@ const NoteState = (props) => {
 
   const getNotes = async () => {
 
-    const respone = await fetch(`${url}/api/notes/fetchallnotes`, {
+    const respone = await fetch(`https://i-note-book-backend-psi.vercel.app/api/notes/fetchallnotes`, {
 
       method: "GET",
       headers: {
@@ -32,7 +32,7 @@ const NoteState = (props) => {
   // Add a note 
   const addNote = async ({ title, description, tag }) => {
 
-    const response = await fetch(`${url}/api/notes/addnote`, {
+    const response = await fetch(`https://i-note-book-backend-psi.vercel.app/api/notes/addnote`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,7 +57,7 @@ const NoteState = (props) => {
 
     setNotes(notes.filter((note) => note._id !== id));
 
-    await fetch(`${url}/api/notes/deletenote/${id}`, {
+    await fetch(`https://i-note-book-backend-psi.vercel.app/api/notes/deletenote/${id}`, {
 
       method: "DELETE",
       headers: {
@@ -88,7 +88,7 @@ const NoteState = (props) => {
     }
 
     // API call
-    await fetch(`${url}/api/notes/updatenote/${id}`, {
+    await fetch(`https://i-note-book-backend-psi.vercel.app/api/notes/updatenote/${id}`, {
 
       method: "PUT",
       headers: {
