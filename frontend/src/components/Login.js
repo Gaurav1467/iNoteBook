@@ -11,7 +11,7 @@ function Login(props) {
     const handleSubmit = async (e) => {
 
         e.preventDefault();
-        const respone = await fetch(`http://localhost:5000/api/auth/login`, {
+        const respone = await fetch(`https://i-note-book-backend-psi.vercel.app/api/auth/login`, {
 
             method: "POST",
             headers: {

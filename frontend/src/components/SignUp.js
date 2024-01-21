@@ -12,7 +12,7 @@ function SignUp(props) {
       const {name, email, password} = credentials
 
      
-      const respone = await fetch(`http://localhost:5000/api/auth/createuser`, {
+      const respone = await fetch(`https://i-note-book-backend-psi.vercel.app/api/auth/createuser`, {
 
           method: "POST",
           headers: {
