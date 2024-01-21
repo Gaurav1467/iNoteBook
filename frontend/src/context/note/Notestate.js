@@ -6,7 +6,7 @@ const NoteState = (props) => {
 
   const [notes, setNotes] = useState([])
 
-  const url = "http://localhost:5000"
+  const url = "https://i-note-book-backend-psi.vercel.app"
 
   // Get all notes
 
