@@ -48,7 +48,7 @@ function SignUp(props) {
   }
   return (
     <div className='container centre-d'>
-      { loader ? <span class="loader"></span> : <form onSubmit={handleSubmit}>
+      { loader ? <div class="loader">Loading...</div> : <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="text" className="form-label">Full Name</label>
           <input type="text" className="form-control input-style" onChange={onChange} minLength={3} required id="name" name='name' />
