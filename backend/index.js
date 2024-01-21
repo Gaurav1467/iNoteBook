@@ -12,9 +12,6 @@ connectToMongo();
 
 app.use(express.json())
 
-app.use('/', (req, res) => {
-  res.send({success : "Connected To Server Successfully!"});
-})
 
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/notes', require('./routes/notes'))
