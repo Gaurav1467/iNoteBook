@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv').config()
 
-const mongoURI = 'mongodb+srv://Gaurav77:lucifer@db.lj9rb7j.mongodb.net/iNoteBook'
+const mongoURI = process.env.CONNECTION_STRING;
 
 const connectToMongo = async () => {
     await mongoose.connect(mongoURI).then(
