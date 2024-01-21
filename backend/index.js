@@ -6,9 +6,9 @@ const port = 5000
 
 
 app.use(cors({
-  origin : "https://i-note-book-backend-psi.vercel.app",
+  origin : "https://i-note-book-zeta.vercel.app",
   methods : ["POST", "PUT", "GET", "DELETE"],
-  credentials : true
+  credentials : true 
 }))
 
 
