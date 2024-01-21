@@ -5,11 +5,7 @@ const app = express()
 const port = 5000
 
 
-app.use(cors({
-  origin : "https://i-note-book-zeta.vercel.app",
-  methods : ["POST", "PUT", "GET", "DELETE"],
-  credentials : true 
-}))
+app.use(cors())
 
 
 connectToMongo();
